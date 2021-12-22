@@ -1,0 +1,43 @@
+
+
+* {
+  font-family: 'Mulish', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: $bg-color;
+  width: 100vw;
+  padding: 10px 20px 0 20px;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  display: block;
+  outline: none;
+  border: 2px solid $border-color-1;
+  border-radius: 6px;
+  color: $text-color-dark;
+  width:max-content;
+  height: max-content;
+  text-align: center;
+  padding: 1rem;
+  text-decoration: none;
+  margin: 2rem 0;
+  font-weight: 700;
+  &-active {
+    background: $primary-200;
+    color: $text-color-light ;
+    transition: all .5s ease;
+    
+    &:hover{
+      background:#fff;
+      border-color:$primary-200;
+      color:$primary-200 !important;
+    }
+  }
+}
