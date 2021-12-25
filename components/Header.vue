@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="logo">
-      <a href="/"> Kaan <span>ŞEN</span> </a>
+      <a href="/"> Kaan <span>SEN</span> </a>
 
       <!-- Mobile button -->
       <a
@@ -17,9 +17,10 @@
     </div>
 
     <nav class="menu" :class="clicked ? 'mobile-open' : ''">
+    
       <ul>
         <li>
-          <a href="#"> <NuxtLink to="/">Home</NuxtLink></a>
+          <a href="#"> <NuxtLink to="/">About</NuxtLink></a>
         </li>
         <li>
           <a href="#"> <NuxtLink to="/Skills">Skılls</NuxtLink></a>
@@ -28,7 +29,7 @@
           <a href="#"> <NuxtLink to="/Portfolio">Portfolıo</NuxtLink></a>
         </li>
         <li>
-          <a href="#"> <NuxtLink to="/Contact">Blog</NuxtLink></a>
+          <a href="#"> <NuxtLink to="/Blog">Blog</NuxtLink></a>
         </li>
       </ul>
     </nav>
@@ -55,11 +56,13 @@ export default {
 .header {
   @include flexCenter;
   justify-content: space-between;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   position: sticky;
   top: 0;
   z-index: 999;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
   height: 100px;
   box-shadow: 0px 4px 0 0px #fafafa;
 
@@ -74,7 +77,7 @@ export default {
       bottom: 0;
       top: 0;
       text-align: center;
-      background: rgba($color: #fff, $alpha: .9);
+      background: rgba($color: #fff, $alpha: 0.9);
       opacity: 1;
       z-index: -1;
       visibility: hidden;

@@ -4,7 +4,7 @@
     <div class="content">
       <div class="article">
         <h5>HELLO</h5>
-        <h1>I'm Kaan ŞEN</h1>
+        <h1>I'm < Kaan SEN /></h1>
         <h5>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente sed
           ea ullam? Tenetur animi nisi possimus, optio iste assumenda, nobis
@@ -14,6 +14,14 @@
       </div>
       <div class="img-container">
         <img src="../assets/img/photo.png" alt="" />
+
+        <div class="social-wrapper">
+          <a href="#">
+            <i class="fab fa-instagram"></i> <span>Instagram</span></a
+          >
+          <a href="#"> <i class="fab fa-linkedin"></i> <span>LinkedIn</span></a>
+          <a href="#"> <i class="fab fa-github"></i> <span>Github</span></a>
+        </div>
       </div>
     </div>
   </div>
@@ -27,6 +35,8 @@ export default {}
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;900&display=swap');
 .content {
   @include flexCenter;
+  position: relative;
+
   @include responsive(medium) {
     @include flexCenter;
     flex-direction: column;
@@ -34,7 +44,7 @@ export default {}
 
   .article {
     padding: 1.5rem;
-
+    animation: opacityIn 1s;
     @include responsive(medium) {
       @include flexCenter;
       flex-direction: column;
@@ -51,6 +61,13 @@ export default {}
     }
 
     h1 {
+      @include responsive(medium) {
+        font-size: 1.8rem;
+      }
+
+      @include responsive(small) {
+        font-size: 1.6rem;
+      }
       font-size: 2.5rem;
       color: $text-color-dark;
       padding: 0 1rem;
@@ -63,21 +80,56 @@ export default {}
   }
 
   .img-container {
+    animation: opacityIn 1s;
     display: grid;
     justify-content: center;
     align-items: flex-start;
     border-radius: 50%;
-    z-index: -1;
+    // z-index: -1;
     transform: scale(0.9);
     img {
       @include responsive(small) {
         width: 100vw;
         height: 100%;
       }
-      // box-shadow: 0px 20px 10px 1px rgba($color: #000000, $alpha: 0.2);
-      max-width: 500px;
+      max-width: 400px;
       height: 100%;
       animation: imageFly infinite 4s;
+      position: relative;
+      left: 20px;
+    }
+  }
+}
+.social-wrapper {
+  text-align: center;
+  margin-top: 30px;
+  a {
+    cursor: pointer;
+    text-decoration: none;
+    color: darken(#979797, 15%);
+    padding: 10px 10px;
+    font-size: 20px;
+    i {
+      font-size: 30px;
+      @include responsive(small) {
+        font-size: 35px;
+      }
+    }
+    &:hover {
+      color: #333;
+      span {
+        width: 90px;
+        opacity: 1;
+      }
+    }
+    span {
+      display: inline-flex;
+      width: 0%;
+      opacity: 0;
+      transition: width 1s, opacity 1.2s;
+      @include responsive(small) {
+        display: none;
+      }
     }
   }
 }

@@ -3,7 +3,7 @@
     <Header></Header>
     <main>
       <div class="title">
-        <h1>My Skills</h1>
+        <h1>My Skılls</h1>
       </div>
       <div class="skill-container">
         <div v-for="item in skills">
@@ -24,6 +24,7 @@
 export default {
   data() {
     return {
+      title: 'My Skills',
       skills: [
         { skillName: 'Javascript', value: 70, color: '#FFE300' },
         { skillName: 'Vue', value: 70, color: '#00C675' },
@@ -35,51 +36,47 @@ export default {
       ],
     }
   },
+  head() {
+    return {
+      title: this.title,
+    }
+  },
 }
 </script>
 
 <style lang="scss" scoped>
-
 main {
   @include flexCenter;
   flex-direction: column;
-
 }
-
-.title {
-  &:hover {
-    h1::before {
-      transform: scaleX(1);
-    }
-  }
+.title{
+  width: 100%;
+  @include flexCenter;
+  flex-direction: column;
+  margin:2rem 0;
+   text-transform: uppercase;
+ 
 }
 h1 {
   text-align: center;
   position: relative;
   color: #333;
-  &::before {
-    content: '';
-    width: 20%;
-    position: absolute;
-    top: 2.5rem;
-    left: 40%;
-    border: 3px solid $primary-100;
-    background: $primary-100;
-    transform: scaleX(0);
-    transition: all 1s ease;
-    border-radius: 10px;
-  }
 }
 
 .skill-container {
+  animation: slideIn 1s;
   margin: 30px 0;
   border: 1px solid #979797;
   border-radius: 10px;
-  width:100%;
-  max-width: 900px;
+  width: 100%;
+  max-width: 800px;
   height: 100%;
   padding: 2rem;
-
+  box-shadow: 10px 40px 50px -10px rgba(0,0,0,0.5);
+  transition: transform .5s ease;
+  &:hover{
+    transform: skewY(-1deg);
+  }
   label {
     font-weight: 700;
     font-size: 1.2rem;

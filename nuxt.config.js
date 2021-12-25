@@ -4,16 +4,16 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'portfoy',
+    title: 'Kaan ŞEN',
     htmlAttrs: {
       lang: 'tr',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' },
+      { hid: 'description', name: 'description', content: 'Kaan ŞEN' },
     ],
+
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
@@ -23,6 +23,21 @@ export default {
       {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap',
+      },
+
+      {
+        rel: 'stylesheet',
+        href: 'https://use.fontawesome.com/releases/v5.15.4/css/all.css',
+        crossorigin: 'anonymous',
+        integrity:
+          'sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm',
+      },
+    ],
+    script: [
+      {
+        src: 'https://kit.fontawesome.com/ea57adae30.js',
+        body: true,
+        crossorigin: 'anonymous',
       },
     ],
   },

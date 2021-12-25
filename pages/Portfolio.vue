@@ -24,19 +24,28 @@
 </template>
 
 <script>
-import Header from '~/components/Header.vue'
 export default {
-  components: { Header },
+  data() {
+    return {
+      title: 'Portfolio Gallery',
+    }
+  },
+  head() {
+    return {
+      title: this.title,
+    }
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 .portfolio-title {
   text-align: center;
-  margin: 2rem 0 3rem 0; 
+  margin: 2rem 0 3rem 0;
   text-transform: uppercase;
 }
 .portfolio-container {
+  animation: opacityIn 1s;
   display: grid;
   grid-template-columns: repeat(3, minmax(auto, 350px));
   row-gap: 1rem;
@@ -77,7 +86,7 @@ export default {
     &:hover {
       .content-img {
         img {
-          top:calc(-100vh + 100%);
+          top: calc(-100vh + 100%);
         }
       }
     }
