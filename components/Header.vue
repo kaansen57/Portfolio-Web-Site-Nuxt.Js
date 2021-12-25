@@ -17,7 +17,6 @@
     </div>
 
     <nav class="menu" :class="clicked ? 'mobile-open' : ''">
-    
       <ul>
         <li>
           <a href="#"> <NuxtLink to="/">About</NuxtLink></a>

@@ -102,12 +102,12 @@ export default {}
 }
 .social-wrapper {
   text-align: center;
-  margin-top: 30px;
+  margin-top: 20px;
   a {
     cursor: pointer;
     text-decoration: none;
     color: darken(#979797, 15%);
-    padding: 10px 10px;
+    padding: 10px;
     font-size: 20px;
     i {
       font-size: 30px;

@@ -64,7 +64,7 @@ h1 {
 }
 
 .skill-container {
-  animation: slideIn 1s;
+  animation: opacityIn 1s;
   margin: 30px 0;
   border: 1px solid #979797;
   border-radius: 10px;
