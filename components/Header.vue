@@ -22,10 +22,10 @@
           <a href="#"> <NuxtLink to="/">Home</NuxtLink></a>
         </li>
         <li>
-          <a href="#"> <NuxtLink to="/About">Skills</NuxtLink></a>
+          <a href="#"> <NuxtLink to="/Skills">Skılls</NuxtLink></a>
         </li>
         <li>
-          <a href="#"> <NuxtLink to="/Portfolio">Portfolio</NuxtLink></a>
+          <a href="#"> <NuxtLink to="/Portfolio">Portfolıo</NuxtLink></a>
         </li>
         <li>
           <a href="#"> <NuxtLink to="/Contact">Blog</NuxtLink></a>

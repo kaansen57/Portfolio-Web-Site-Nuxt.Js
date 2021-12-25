@@ -66,7 +66,7 @@ export default {}
     display: grid;
     justify-content: center;
     align-items: flex-start;
-
+    border-radius: 50%;
     z-index: -1;
     transform: scale(0.9);
     img {
@@ -74,12 +74,11 @@ export default {}
         width: 100vw;
         height: 100%;
       }
+      // box-shadow: 0px 20px 10px 1px rgba($color: #000000, $alpha: 0.2);
       max-width: 500px;
       height: 100%;
       animation: imageFly infinite 4s;
     }
   }
 }
-
-
 </style>

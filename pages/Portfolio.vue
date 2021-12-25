@@ -48,7 +48,7 @@ export default {
     grid-template-columns: repeat(2, minmax(auto, 350px));
   }
 
-  @include responsive(small) {
+  @include responsive(medium) {
     grid-template-columns: repeat(1, minmax(auto, 350px));
     row-gap: 0;
   }

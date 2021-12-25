@@ -6,7 +6,7 @@ export default {
   head: {
     title: 'portfoy',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'tr',
     },
     meta: [
       { charset: 'utf-8' },
