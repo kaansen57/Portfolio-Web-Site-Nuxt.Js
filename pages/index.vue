@@ -16,11 +16,11 @@
         <img src="../assets/img/photo.png" alt="" />
 
         <div class="social-wrapper">
-          <a href="#">
+          <a href="https://www.instagram.com/kaansn57/">
             <i class="fab fa-instagram"></i> <span>Instagram</span></a
           >
-          <a href="#"> <i class="fab fa-linkedin"></i> <span>LinkedIn</span></a>
-          <a href="#"> <i class="fab fa-github"></i> <span>Github</span></a>
+          <a href="https://www.linkedin.com/in/kaansen57/"> <i class="fab fa-linkedin"></i> <span>LinkedIn</span></a>
+          <a href="https://github.com/kaansen57"> <i class="fab fa-github"></i> <span>Github</span></a>
         </div>
       </div>
     </div>
@@ -97,6 +97,7 @@ export default {}
       animation: imageFly infinite 4s;
       position: relative;
       left: 20px;
+      filter:  drop-shadow(5px 5px 15px $text-color-dark);
     }
   }
 }

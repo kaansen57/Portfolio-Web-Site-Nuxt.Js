@@ -45,13 +45,15 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '~assets/scss/colors.scss',
+    '~assets/scss/admin/colors.scss',
     '~assets/scss/mixins.scss',
     '~assets/scss/animations.scss',
     '~assets/scss/main.scss',
+    '~assets/scss/admin/main.scss',
   ],
 
   styleResources: {
-    scss: ['~assets/scss/*.scss'],
+    scss: ['~assets/scss/*.scss', '~assets/scss/admin/*.scss'],
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

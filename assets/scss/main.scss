@@ -7,13 +7,13 @@
   box-sizing: border-box;
 }
 body {
-  background: $bg-color;
   width: 100vw;
   padding: 10px 20px 0 20px;
 }
 .container{
   display: flex;
   flex-direction: column;
+    background: $bg-color;
 }
 
 .btn {
