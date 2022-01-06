@@ -140,8 +140,8 @@ export default {
       .content-img {
         img {
           //image slide
-          top: calc(-100vh + 100%);
-          transform: scale(1.1);
+          // top: calc(-100vh + 100%);
+          // transform: scale(1.1);
         }
       }
     }

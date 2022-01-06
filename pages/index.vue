@@ -74,7 +74,7 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;900&display=swap');
 .content {
   @include flexCenter;
-  justify-content: space-around;
+  justify-content: space-evenly;
   position: relative;
 
   @include responsive(medium) {
@@ -125,14 +125,12 @@ export default {
     transform: scale(0.9);
     img {
       @include responsive(small) {
-        width: 90%;
+        width: 100%;
       }
       width: 400px;
-      height: 100%;
       animation: imageFly infinite 4s;
       position: relative;
-      left: 20px;
-      filter: drop-shadow(5px 5px 15px $text-color-dark);
+      filter: drop-shadow(0px 10px 5px $text-color-dark);
     }
   }
 }
