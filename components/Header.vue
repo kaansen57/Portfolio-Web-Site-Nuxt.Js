@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="logo">
-      <a href="/"> Kaan <span>SEN</span> </a>
+      <a href="/"><span> < KaanSen /> </span> </a>
 
       <!-- Mobile button -->
       <a
@@ -63,7 +63,7 @@ export default {
   backdrop-filter: blur(7px);
   -webkit-backdrop-filter: blur(7px);
   height: 100px;
-  box-shadow: 0px 4px 0 0px #fafafa;
+  box-shadow: 0 4px 0 0 rgba(250, 250, 250,.7);
 
   // Mobile Layout
   @include responsive(small) {
@@ -133,7 +133,7 @@ export default {
       width: 100%;
       padding: 0 1rem;
       justify-content: space-between;
-      margin-bottom: 2rem;
+      margin: 2rem  0;
     }
 
     .mobile-button {

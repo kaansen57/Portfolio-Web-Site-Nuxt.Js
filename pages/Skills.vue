@@ -28,7 +28,9 @@ export default {
       skills: [
         { skillName: 'Javascript', value: 70, color: '#FFE300' },
         { skillName: 'Vue', value: 70, color: '#00C675' },
+        { skillName: 'Nuxt', value: 70, color: '#00C675' },
         { skillName: 'Angular', value: 70, color: '#CD1818' },
+        { skillName: 'Typescript', value: 70, color: '#CD1818' },
         { skillName: 'Html', value: 90, color: '#FF5403' },
         { skillName: 'Css', value: 80, color: '#2F86A6' },
         { skillName: 'Scss', value: 70, color: '#C85C5C' },

@@ -4,23 +4,24 @@
     <div class="content">
       <div class="article">
         <h5>HELLO</h5>
-        <h1>I'm < Kaan SEN /></h1>
+        <h1>I'm {{ myData.name }}</h1>
         <h5>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente sed
-          ea ullam? Tenetur animi nisi possimus, optio iste assumenda, nobis
-          quaerat nemo, commodi magnam eveniet voluptate cum velit eaque omnis?
+          {{ myData.content }}
         </h5>
         <a href="" class="btn btn-active">Download CV</a>
       </div>
       <div class="img-container">
-        <img src="../assets/img/photo.png" alt="" />
+        <img
+          :src="require(`~/assets/img/${myData.imgAttr.img}`)"
+          :alt="myData.imgAttr.alt"
+        />
 
         <div class="social-wrapper">
-          <a href="https://www.instagram.com/kaansn57/">
-            <i class="fab fa-instagram"></i> <span>Instagram</span></a
-          >
-          <a href="https://www.linkedin.com/in/kaansen57/"> <i class="fab fa-linkedin"></i> <span>LinkedIn</span></a>
-          <a href="https://github.com/kaansen57"> <i class="fab fa-github"></i> <span>Github</span></a>
+          <span v-for="item in myData.contact">
+            <a :href="item.href" target="_blank">
+              <i :class="item.icon"></i> <span>{{ item.text }}</span>
+            </a>
+          </span>
         </div>
       </div>
     </div>
@@ -28,13 +29,52 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      myData: {
+        name: '< Kaan SEN />',
+        content: `Hello , I'm Kaan ŞEN. I'm Software Developer. 
+          I works technologies vanilla javascript , vue.js , 
+          nuxt.js and angular for frontend development, .net core and node.js for backend development.`,
+        cvLink: '',
+        imgAttr: {
+          img: 'photo.png',
+          alt: 'Kaan ŞEN',
+        },
+        contact: [
+          {
+            href: 'https://www.instagram.com/kaansn57/',
+            icon: 'fab fa-instagram',
+            text: 'Instagram',
+          },
+          {
+            href: 'https://www.linkedin.com/in/kaansen57/',
+            icon: 'fab fa-linkedin',
+            text: 'LinkedIn',
+          },
+          {
+            href: 'https://github.com/kaansen57',
+            icon: 'fab fa-github',
+            text: 'Github',
+          },
+          {
+            href: 'mailto:kaansen57@outlook.com',
+            icon: 'far fa-envelope-open',
+            text: 'Mail',
+          },
+        ],
+      },
+    }
+  },
+}
 </script>
 
 <style lang="scss" scoped>
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;900&display=swap');
 .content {
   @include flexCenter;
+  justify-content: space-around;
   position: relative;
 
   @include responsive(medium) {
@@ -81,29 +121,29 @@ export default {}
 
   .img-container {
     animation: opacityIn 1s;
-    display: grid;
-    justify-content: center;
-    align-items: flex-start;
-    border-radius: 50%;
-    // z-index: -1;
+    position: relative;
     transform: scale(0.9);
     img {
       @include responsive(small) {
-        width: 100vw;
-        height: 100%;
+        width: 90%;
       }
-      max-width: 400px;
+      width: 400px;
       height: 100%;
       animation: imageFly infinite 4s;
       position: relative;
       left: 20px;
-      filter:  drop-shadow(5px 5px 15px $text-color-dark);
+      filter: drop-shadow(5px 5px 15px $text-color-dark);
     }
   }
 }
 .social-wrapper {
-  text-align: center;
+  display: flex;
+  position: absolute;
+  left: 25%;
   margin-top: 20px;
+  @include responsive(small) {
+    left: 20%;
+  }
   a {
     cursor: pointer;
     text-decoration: none;
@@ -115,22 +155,20 @@ export default {}
       @include responsive(small) {
         font-size: 35px;
       }
-    }
-    &:hover {
-      color: #333;
-      span {
-        width: 90px;
+      // //social media text area show effects
+      &:hover + span {
+        display: inline;
+        color: #333;
+        width: max-content;
         opacity: 1;
+        @include responsive(small) {
+          display: none;
+        }
       }
     }
+
     span {
-      display: inline-flex;
-      width: 0%;
-      opacity: 0;
-      transition: width 1s, opacity 1.2s;
-      @include responsive(small) {
-        display: none;
-      }
+      display: none;
     }
   }
 }
