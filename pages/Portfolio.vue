@@ -42,6 +42,14 @@ export default {
           githubLink: 'https://github.com/kaansen57/Portfolio-Web-Site-Nuxt.Js',
         },
         {
+          title: 'PharmaVUE Nöbetçi Eczaneler',
+          content: 'PharmaVUE is a pharmacies on duty for Turkey',
+           badge: ['vuejs', 'vue3','css3','html5'],
+          img: 'pharmavue.png',
+          liveLink: 'https://nobetci-eczaneler.netlify.app',
+          githubLink: 'https://github.com/kaansen57/nobetci-eczaneler-vue',
+        },
+        {
           title: 'Frontend Daily',
           content: 'Daily Frontend Challange with SCSS',
           badge: ['sass', 'scss', 'css3'],
