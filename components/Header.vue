@@ -18,17 +18,8 @@
 
     <nav class="menu" :class="clicked ? 'mobile-open' : ''">
       <ul>
-        <li>
-          <a href="#"> <NuxtLink to="/">About</NuxtLink></a>
-        </li>
-        <li>
-          <a href="#"> <NuxtLink to="/Skills">Skılls</NuxtLink></a>
-        </li>
-        <li>
-          <a href="#"> <NuxtLink to="/Portfolio">Portfolıo</NuxtLink></a>
-        </li>
-        <li>
-          <a href="#"> <NuxtLink to="/Blog">Blog</NuxtLink></a>
+        <li v-for="menuItem in menuItems">
+          <NuxtLink class="li" :to="menuItem.url">{{menuItem.name}}</NuxtLink>
         </li>
       </ul>
     </nav>
@@ -40,6 +31,24 @@ export default {
   data() {
     return {
       clicked: false,
+      menuItems :[
+        {
+          name: 'About',
+          url: '/'
+        },
+        {
+          name: 'Skılls',
+          url: '/Skills'
+        },
+        {
+          name: 'Portfolıo',
+          url: '/Portfolio'
+        },
+        {
+          name: 'Blog',
+          url: '/Blog'
+        }
+      ]
     }
   },
   methods: {
@@ -55,7 +64,6 @@ export default {
 .header {
   @include flexCenter;
   justify-content: space-between;
-  margin-bottom: 2rem;
   position: sticky;
   top: 0;
   z-index: 999;
@@ -117,17 +125,13 @@ export default {
           height: 50%;
           transform: skew(-11deg);
           margin-top: 50%;
-
-          li {
-            a {
-              color: #fff;
-            }
+          .li {
+            color: #fff;
           }
         }
       }
     }
 
-    // position: relative;
     .logo {
       @include flexCenter;
       width: 100%;

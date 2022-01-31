@@ -8,21 +8,23 @@
         <h5>
           {{ myData.content }}
         </h5>
-        <a href="" class="btn btn-active">Download CV</a>
+        <div class="article-bottom">
+          <a href="" class="btn btn-active">Download CV</a>
+
+          <div class="social-wrapper">
+            <span v-for="item in myData.contact">
+              <a :href="item.href" target="_blank">
+                <i :class="item.icon"></i>
+              </a>
+            </span>
+          </div>
+        </div>
       </div>
       <div class="img-container">
         <img
           :src="require(`~/assets/img/${myData.imgAttr.img}`)"
           :alt="myData.imgAttr.alt"
         />
-
-        <div class="social-wrapper">
-          <span v-for="item in myData.contact">
-            <a :href="item.href" target="_blank">
-              <i :class="item.icon"></i> <span>{{ item.text }}</span>
-            </a>
-          </span>
-        </div>
       </div>
     </div>
   </div>
@@ -76,7 +78,6 @@ export default {
   @include flexCenter;
   justify-content: space-evenly;
   position: relative;
-
   @include responsive(medium) {
     @include flexCenter;
     flex-direction: column;
@@ -127,46 +128,46 @@ export default {
       @include responsive(small) {
         width: 100%;
       }
-      width: 400px;
-      animation: imageFly infinite 4s;
+      width: 500px;
       position: relative;
       filter: drop-shadow(0px 10px 5px $text-color-dark);
     }
   }
 }
-.social-wrapper {
+.article-bottom {
   display: flex;
-  position: absolute;
-  left: 25%;
-  margin-top: 20px;
-  @include responsive(small) {
-    left: 20%;
+  align-items: center;
+  justify-content: space-between;
+
+  @include responsive(medium) {
+    flex-direction: column;
   }
-  a {
-    cursor: pointer;
-    text-decoration: none;
-    color: darken(#979797, 15%);
-    padding: 10px;
-    font-size: 20px;
-    i {
-      font-size: 30px;
-      @include responsive(small) {
-        font-size: 35px;
-      }
-      // //social media text area show effects
-      &:hover + span {
-        display: inline;
-        color: #333;
-        width: max-content;
-        opacity: 1;
+  .social-wrapper {
+    display: flex;
+    @include responsive(small) {
+      left: 20%;
+    }
+    a {
+      cursor: pointer;
+      text-decoration: none;
+      color: darken(#979797, 15%);
+      padding: 10px;
+      font-size: 20px;
+      i {
+        font-size: 30px;
+        transition: transform 0.5s;
         @include responsive(small) {
-          display: none;
+          font-size: 35px;
+        }
+        &:hover {
+          transform: scale(1.1);
+          color: $primary-300;
         }
       }
-    }
 
-    span {
-      display: none;
+      span {
+        display: none;
+      }
     }
   }
 }
