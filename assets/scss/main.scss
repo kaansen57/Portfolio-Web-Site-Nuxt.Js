@@ -7,13 +7,17 @@
   box-sizing: border-box;
 }
 body {
-  width: 100vw;
-  padding: 10px 20px 0 20px;
+  padding: 0;
+  margin: 0;
 }
 .container{
   display: flex;
   flex-direction: column;
-    background: $bg-color;
+  width: 100%;
+  min-height: 100vh;
+  background: $bg-color;
+  padding: 10px 20px 0 20px;
+ 
 }
 
 .btn {

@@ -11,15 +11,13 @@
         @click="isClicked()"
       >
         <span></span>
-        <span></span>
-        <span></span>
       </a>
     </div>
 
     <nav class="menu" :class="clicked ? 'mobile-open' : ''">
       <ul>
         <li v-for="menuItem in menuItems">
-          <NuxtLink class="li" :to="menuItem.url">{{menuItem.name}}</NuxtLink>
+          <NuxtLink class="li" :to="menuItem.url">{{ menuItem.name }}</NuxtLink>
         </li>
       </ul>
     </nav>
@@ -31,29 +29,28 @@ export default {
   data() {
     return {
       clicked: false,
-      menuItems :[
+      menuItems: [
         {
           name: 'About',
-          url: '/'
+          url: '/',
         },
         {
           name: 'Skılls',
-          url: '/Skills'
+          url: '/Skills',
         },
         {
           name: 'Portfolıo',
-          url: '/Portfolio'
+          url: '/Portfolio',
         },
         {
           name: 'Blog',
-          url: '/Blog'
-        }
-      ]
+          url: '/Blog',
+        },
+      ],
     }
   },
   methods: {
     isClicked() {
-      console.log(this.clicked)
       return (this.clicked = !this.clicked)
     },
   },
@@ -64,14 +61,19 @@ export default {
 .header {
   @include flexCenter;
   justify-content: space-between;
+  padding: 1rem;
+  height: 100px;
   position: sticky;
   top: 0;
   z-index: 999;
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(7px);
   -webkit-backdrop-filter: blur(7px);
-  height: 100px;
-  box-shadow: 0 4px 0 0 rgba(250, 250, 250,.7);
+  box-shadow: 0 4px 0 0 rgba(250, 250, 250, 0.7);
+
+  .menu {
+    @include flexCenter;
+  }
 
   // Mobile Layout
   @include responsive(small) {
@@ -87,14 +89,10 @@ export default {
       background: rgba($color: #fff, $alpha: 0.9);
       opacity: 1;
       z-index: -1;
-      visibility: hidden;
-
-      ul {
-        display: none;
-      }
 
       &::before {
         content: '';
+        display: inline-block;
         position: absolute;
         top: -10px;
         bottom: -10px;
@@ -103,7 +101,10 @@ export default {
         background: $primary-100;
         transform-origin: 0 0;
         transform: skew(-14deg) translateX(-120%);
-        transition: all 0.275s 0.1s 0;
+      }
+
+      ul {
+        display: none;
       }
 
       &.mobile-open {
@@ -111,9 +112,9 @@ export default {
         z-index: 100;
         visibility: visible;
         height: 100vh;
-
+   
         &::before {
-          display: block;
+          display: inline-block;
           transform: skew(-10deg) translateX(0);
         }
 
@@ -137,54 +138,76 @@ export default {
       width: 100%;
       padding: 0 1rem;
       justify-content: space-between;
-      margin: 2rem  0;
+      margin: 2rem 0;
     }
 
+    // Mobile button icon
     .mobile-button {
       @include flexCenter;
+      width: 45px;
+      height: 45px;
       flex-direction: column;
-      border-radius: 3px;
-      border: 2px solid $primary-300;
       z-index: 999;
+      position: relative;
+
       span {
-        transition: all 0.3s ease;
         display: block;
         border: 2px solid $primary-200;
         background: $primary-300;
-        width: 80%;
+        width: 60%;
         margin: 2px 0;
+        border-radius: 10px;
+        &::before {
+          content: '';
+          position: absolute;
+          top: 10%;
+          left: 5%;
+          display: block;
+          border: 2px solid $primary-200;
+          background: $primary-300;
+          width: 80%;
+          margin: 2px 0;
+          border-radius: 10px;
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 10%;
+          left: 5%;
+          display: block;
+          border: 2px solid $primary-200;
+          background: $primary-300;
+          width: 80%;
+          margin: 2px 0;
+          border-radius: 10px;
+        }
+      }
+    }
+    .mobile-button-open {
+      span {
+        transform: scale(0);
+      }
+      &::before {
+        display: block;
+        content: '';
+        width: 90%;
+        height: 3px;
+        background: $text-color-light;
+        transform: translateY(5px) rotate(-45deg);
+      }
+      &::after {
+        display: block;
+        content: '';
+        width: 90%;
+        height: 3px;
+        background: $text-color-light;
+        transform: translateY(-5px) rotate(45deg);
       }
     }
   }
+  //mobile layout end
 
-  .mobile-button {
-    width: 45px;
-    height: 45px;
-    background: #fff;
-  }
-  .mobile-button-open {
-    // transition: all 0.3s ease;
-    // span {
-    //   display: none;
-    // }
-    // &::before {
-    //   display: block;
-    //   content: '';
-    //   width: 90%;
-    //   height: 3px;
-    //   background: $primary-200;
-    //   transform: rotate(-45deg);
-    // }
-    // &::after {
-    //   display: block;
-    //   content: '';
-    //   width: 90%;
-    //   height: 3px;
-    //   background: $primary-100;
-    //   margin: -3px;
-    //   transform: rotate(45deg);
-    // }
-  }
+  //  desktop layout start
   .logo {
     outline: none;
     a {
@@ -201,9 +224,6 @@ export default {
 }
 ul {
   @include flexCenter;
-  // @include responsive(small) {
-  //   flex-direction: column;
-  // }
   list-style-type: none;
   li {
     font-size: 16px;
@@ -240,4 +260,6 @@ ul {
     }
   }
 }
+
+//  desktop layout end
 </style>

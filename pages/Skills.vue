@@ -117,6 +117,17 @@ h1 {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  @include responsive(small) {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
   .skill-card {
     display: flex;
     flex-direction: column;
@@ -125,7 +136,7 @@ h1 {
     height: 310px;
     border: 1px solid $border-color-1;
     border-radius: 5px;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     margin: 1rem;
     cursor: pointer;
     &:hover {
@@ -224,7 +235,8 @@ h1 {
   display: inline-block;
   width: 80px;
   height: 80px;
-  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/512px-.NET_Core_Logo.svg.png') center center ;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/512px-.NET_Core_Logo.svg.png')
+    center center;
   background-size: 100%;
 }
 .nuxt {
