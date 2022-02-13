@@ -9,7 +9,7 @@
           {{ myData.content }}
         </h5>
         <div class="article-bottom">
-          <a href="" class="btn btn-active">Download CV</a>
+          <a :href="myData.cvLink" class="btn btn-active">Download CV</a>
 
           <div class="social-wrapper">
             <span v-for="item in myData.contact">
@@ -39,7 +39,7 @@ export default {
         content: `Hello , I'm Kaan ŞEN. I'm Software Developer. 
           I works technologies vanilla javascript , vue.js , 
           nuxt.js and angular for frontend development, .net core and node.js for backend development.`,
-        cvLink: '',
+        cvLink: '/kaansencv.pdf',
         imgAttr: {
           img: 'photo.png',
           alt: 'Kaan ŞEN',

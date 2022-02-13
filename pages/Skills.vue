@@ -138,6 +138,7 @@ h1 {
     border-radius: 5px;
     padding: 0.5rem 1rem;
     margin: 1rem;
+    box-shadow: 2px 2px 5px #313131;
     cursor: pointer;
     &:hover {
       border: 3px solid var(--bgColor);
